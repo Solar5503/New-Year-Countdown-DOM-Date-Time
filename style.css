@@ -34,8 +34,17 @@ h1 {
   font-size: clamp(2.5rem, 4vw, 4rem);
   margin: -8rem 0 min(1rem, 4vw);
 }
+.year {
+  font-size: min(30vw, 15rem);
+  z-index: -1;
+  opacity: 0.2;
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .countdown {
-  display: flex;
+  display: none;
   font-size: clamp(2rem, 4vw, 5rem);
   margin-top: 0.5rem;
 }

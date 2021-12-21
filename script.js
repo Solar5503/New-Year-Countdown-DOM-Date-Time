@@ -3,6 +3,8 @@ const hours = document.getElementById('hours');
 const minutes = document.getElementById('minutes');
 const seconds = document.getElementById('seconds');
 const countdown = document.getElementById('countdown');
+const year = document.getElementById('year');
+const loading = document.getElementById('loading');
 
 const currentYear = new Date().getFullYear();
 const newYearTime = new Date(`January 01 ${currentYear + 1} 00:00:00`);
@@ -20,6 +22,13 @@ function updateCountdown() {
   hours.innerText = `${h}`.padStart(2, 0);
   minutes.innerText = `${m}`.padStart(2, 0);
   seconds.innerText = `${s}`.padStart(2, 0);
+  year.innerText = currentYear + 1;
 }
+
+//Show spinner before countdown
+setTimeout(() => {
+  loading.remove();
+  countdown.style.display = 'flex';
+}, 1000);
 
 setInterval(updateCountdown, 1000);
